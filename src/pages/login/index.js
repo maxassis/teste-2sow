@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import * as S from "./styles";
 import * as Yup from "yup";
 import { v4 as uuidv4 } from "uuid";
+import Header from "../../components/header";
 
 function receiveToken() {
   localStorage.setItem("token", uuidv4());
@@ -42,6 +43,7 @@ function Login() {
 
   return (
     <>
+      <Header />
       <S.Wrapper>
         <S.LoginBox>
           <S.Title>Login</S.Title>

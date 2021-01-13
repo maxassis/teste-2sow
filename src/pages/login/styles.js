@@ -4,11 +4,11 @@ import { Form } from "@unform/web";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 450px;
+  grid-template-columns: 515px;
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-color: #f5f4f4;
 `;
 
