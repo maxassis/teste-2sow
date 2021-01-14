@@ -8,8 +8,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 90vh;
+  height: 85vh;
   background-color: #f5f4f4;
+  overflow: hidden;
 `;
 
 export const LoginBox = styled.div`

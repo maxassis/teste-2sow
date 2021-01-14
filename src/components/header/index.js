@@ -8,9 +8,9 @@ function Header() {
         <S.Nav>
           <S.Logo>2Swon List</S.Logo>
           <S.Ul>
-            <S.Li>home</S.Li>
-            <S.Li>signin</S.Li>
-            <S.Li>sigup</S.Li>
+            <S.Li></S.Li>
+            <S.Li></S.Li>
+            <S.Li></S.Li>
           </S.Ul>
         </S.Nav>
       </S.Wrapper>

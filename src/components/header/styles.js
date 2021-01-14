@@ -16,10 +16,14 @@ export const Nav = styled.nav`
   align-items: center;
   padding-left: 40px;
   padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.51);
 `;
 
 export const Logo = styled.div`
   font-size: 40px;
+  font-family: "Open Sans", sans-serif;
 `;
 
 export const Ul = styled.ul`
@@ -31,4 +35,5 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   font-size: 22px;
+  font-family: "Open Sans", sans-serif;
 `;

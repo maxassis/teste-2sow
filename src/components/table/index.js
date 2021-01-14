@@ -4,23 +4,30 @@ import { DeleteForever } from "@styled-icons/material/DeleteForever";
 import styled from "styled-components";
 
 const Tabela = styled.table`
-  width: 100%;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const Th = styled.th`
   background-color: #af0069;
   color: white;
-  height: 45px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 10px;
+  text-align: left;
 `;
 
 const Td = styled.td`
-  height: 40px;
+  height: 35px;
   border-bottom: 0.5px dotted;
+  padding-top: 19px;
+  padding-left: 10px;
 `;
 
 const Icon1 = styled(EditAlt)`
   width: 23px;
-  margin-left: 50%;
+  padding-left: 12px;
 
   :hover {
     cursor: pointer;
@@ -29,7 +36,7 @@ const Icon1 = styled(EditAlt)`
 
 const Icon2 = styled(DeleteForever)`
   width: 23px;
-  margin-left: 50%;
+  padding-left: 12px;
 
   :hover {
     cursor: pointer;
