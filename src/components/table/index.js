@@ -43,7 +43,26 @@ const Icon2 = styled(DeleteForever)`
   }
 `;
 
-function Table() {
+function Table({ data }) {
+  const names = data.map(function (user) {
+    return (
+      <>
+        <tr>
+          <Td>{user.nome}</Td>
+          <Td>{user.cpf}</Td>
+          <Td>{user.email}</Td>
+          <Td>{user.endereco.cidade}</Td>
+          <Td>
+            <Icon1 />
+          </Td>
+          <Td>
+            <Icon2 />
+          </Td>
+        </tr>
+      </>
+    );
+  });
+
   return (
     <>
       <Tabela>
@@ -55,30 +74,7 @@ function Table() {
           <Th>Editar</Th>
           <Th>Apagar</Th>
         </tr>
-        <tr>
-          <Td>Igor</Td>
-          <Td>1221562</Td>
-          <Td>Chiquinho@uol.com.br</Td>
-          <Td>Sao Pedro da Aldeia</Td>
-          <Td>
-            <Icon1 />
-          </Td>
-          <Td>
-            <Icon2 />
-          </Td>
-        </tr>
-        <tr>
-          <Td>Chiquinho</Td>
-          <Td>95125219-99</Td>
-          <Td>pedro@ig.com</Td>
-          <Td>Cabo Frio</Td>
-          <Td>
-            <Icon1 />
-          </Td>
-          <Td>
-            <Icon2 />
-          </Td>
-        </tr>
+        {names}
       </Tabela>
     </>
   );

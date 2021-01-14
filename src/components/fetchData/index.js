@@ -1,7 +1,8 @@
 import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
-import List from "../../pages/List";
+//import List from "../../pages/List";
+import Table from "../table/index";
 
 export default function Fetch() {
   const dbFetch = async () => {
@@ -15,7 +16,7 @@ export default function Fetch() {
   return (
     <>
       {error && <h1>Deu ruuim</h1>}
-      {isLoading ? <h1>Carregando</h1> : <List data={data} />}
+      {isLoading ? <h1>Carregando</h1> : <Table data={data} />}
     </>
   );
 }
