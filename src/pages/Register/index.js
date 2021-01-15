@@ -6,12 +6,29 @@ import * as S from "./styles";
 import Header from "../../components/header/index";
 import axios from "axios";
 
+function teste() {
+  alert("iiiiiiii");
+}
+
 export default function Register() {
   const [toggle, setToggle] = useState(false);
+  const [cepSelect, setCepSelect] = useState("");
+
+  function getInputCep(event) {
+    setCepSelect(event.target.value);
+  }
+
+  console.log(cepSelect);
 
   const schema = yup.object().shape({
-    cpf: yup.string().required("Cpf obrigatorio"),
-    cep: yup.string().required("Cep e obrigatorio"),
+    cpf: yup
+      .string()
+      .required("Digite um cpf valido")
+      .min(14, "digite todos os numeros"),
+    cep: yup
+      .string()
+      .required("Digite um cep valido")
+      .min(9, "digite todos os numeros"),
     nome: yup.string().required("Nome e obrigatorio"),
     email: yup.string().email().required("Email e obrigatorio"),
     //numero: yup.string().required("numero e obrigatorio"),
@@ -61,6 +78,7 @@ export default function Register() {
             control={control}
             mask="999.999.999-99"
             name="cpf"
+            maskPlaceholder={null}
             placeholder="Cpf"
             defaultValue=""
           />
@@ -69,14 +87,17 @@ export default function Register() {
           {errors.email && <S.Span>Digite um email valido</S.Span>}
           <div>
             <Controller
-              as={S.InptCep}
+              as={<S.InptCep />}
               control={control}
               mask="99999-999"
+              maskPlaceholder={null}
               name="cep"
               placeholder="Cep"
               defaultValue=""
             />
-            <S.BtnCep type="button">Buscar Cep</S.BtnCep>
+            <S.BtnCep type="button" onClick={teste}>
+              Buscar Cep
+            </S.BtnCep>
             <br /> {errors.cep && <S.Span>O cep e obrigatorio</S.Span>}
           </div>
           <S.Input
@@ -112,6 +133,7 @@ export default function Register() {
           {errors.cidade && <S.Span>A cidade e obrigatorio</S.Span>}
           <S.Btn>Enviar</S.Btn>
         </S.Frm>
+        <input value={cepSelect} onChange={getInputCep}></input>
       </S.WrapperForm>
     </>
   );
