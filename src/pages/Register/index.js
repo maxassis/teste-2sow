@@ -5,21 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as S from "./styles";
 import Header from "../../components/header/index";
 import axios from "axios";
-
-function teste() {
-  alert("iiiiiiii");
-}
+import { v4 as uuidv4 } from "uuid";
 
 export default function Register() {
-  const [toggle, setToggle] = useState(false);
-  const [cepSelect, setCepSelect] = useState("");
-
-  function getInputCep(event) {
-    setCepSelect(event.target.value);
-  }
-
-  console.log(cepSelect);
-
   const schema = yup.object().shape({
     cpf: yup
       .string()
@@ -31,7 +19,7 @@ export default function Register() {
       .min(9, "digite todos os numeros"),
     nome: yup.string().required("Nome e obrigatorio"),
     email: yup.string().email().required("Email e obrigatorio"),
-    //numero: yup.string().required("numero e obrigatorio"),
+    numero: yup.string().required("numero e obrigatorio"),
   });
 
   const { register, handleSubmit, errors, control } = useForm({
@@ -52,7 +40,9 @@ export default function Register() {
         ) {
           document.getElementById("cidade").value = response.data.localidade;
           document.getElementById("bairro").value = response.data.bairro;
-          document.getElementById("rua").value = response.data.logradouro;
+          const rua = (document.getElementById("rua").value =
+            response.data.logradouro);
+          rua !== undefined && executePost();
         } else if (response.data.erro === true) {
           alert("deu ruim");
         }
@@ -61,6 +51,26 @@ export default function Register() {
         alert("deu erro");
         console.log(error.response);
       });
+
+    const executePost = async () => {
+      const body = {
+        id: uuidv4(),
+        nome: data.nome,
+        cpf: data.cpf,
+        email: data.email,
+        endereco: {
+          cep: data.cep,
+          rua: document.getElementById("rua").value,
+          numero: data.numero,
+          bairro: document.getElementById("bairro").value,
+          cidade: document.getElementById("cidade").value,
+        },
+      };
+
+      const response = await axios.post("http://localhost:5000/usuarios", body);
+
+      console.log(response);
+    };
   }
 
   return (
@@ -87,7 +97,7 @@ export default function Register() {
           {errors.email && <S.Span>Digite um email valido</S.Span>}
           <div>
             <Controller
-              as={<S.InptCep />}
+              as={S.InputMsk}
               control={control}
               mask="99999-999"
               maskPlaceholder={null}
@@ -95,10 +105,7 @@ export default function Register() {
               placeholder="Cep"
               defaultValue=""
             />
-            <S.BtnCep type="button" onClick={teste}>
-              Buscar Cep
-            </S.BtnCep>
-            <br /> {errors.cep && <S.Span>O cep e obrigatorio</S.Span>}
+            {errors.cep && <S.Span>O cep e obrigatorio</S.Span>}
           </div>
           <S.Input
             name="numero"
@@ -133,7 +140,6 @@ export default function Register() {
           {errors.cidade && <S.Span>A cidade e obrigatorio</S.Span>}
           <S.Btn>Enviar</S.Btn>
         </S.Frm>
-        <input value={cepSelect} onChange={getInputCep}></input>
       </S.WrapperForm>
     </>
   );

@@ -70,18 +70,6 @@ export const Span = styled.span`
   font-size: 12px;
 `;
 
-export const InptCep = styled(InputMask)`
-  width: 66.5%;
-  height: 43px;
-  border-radius: 8px;
-  outline: none;
-  border: 1.5px solid;
-  border-color: #dfe0df;
-  background-color: #f5f4f4;
-  padding-left: 18px;
-  box-sizing: border-box;
-`;
-
 export const BtnCep = styled.button`
   width: 30%;
   height: 43px;
