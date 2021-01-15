@@ -1,28 +1,43 @@
 {
   "usuarios": [
     {
+      "id": 1,
       "nome": "foo bar",
       "cpf": "213.123.123-45",
       "email": "foo_bar@email.com",
       "endereco": {
-          "cep": 13454000,
-          "rua": "rua talvez",
-          "numero": 785,
-          "bairro": "bairro azul",
-          "cidade": "cidade eterna"
+        "cep": 13454000,
+        "rua": "rua talvez",
+        "numero": 785,
+        "bairro": "bairro azul",
+        "cidade": "cidade eterna"
       }
-  },
-  {
-    "nome": "Max Assis",
-    "cpf": "100.395.647-54",
-    "email": "max.assis@outlook.com",
-    "endereco": {
+    },
+    {
+      "id": 2,
+      "nome": "Max Assis",
+      "cpf": "100.395.647-54",
+      "email": "max.assis@outlook.com",
+      "endereco": {
         "cep": 13454000,
         "rua": "Rua Comandante Ituriel",
         "numero": 1612,
         "bairro": "Boa Vista",
         "cidade": "Rio de Janeiro"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Nildis",
+      "cpf": "213.122.143-45",
+      "email": "nildis@email.com",
+      "endereco": {
+        "cep": 13454000,
+        "rua": "rua comandante ituriel",
+        "numero": 512,
+        "bairro": "barra da tijuca",
+        "cidade": "Rio de janeiro"
+      }
     }
-}
   ]
 }

@@ -12,6 +12,8 @@ const Tabela = styled.table`
 const Th = styled.th`
   background-color: #af0069;
   color: white;
+  font-size: 19px;
+  font-weight: 700;
   padding-bottom: 15px;
   padding-top: 15px;
   padding-left: 10px;

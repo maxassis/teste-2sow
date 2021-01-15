@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Input from "../../components/input/index";
-import { Form } from "@unform/web";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -34,13 +32,13 @@ export const Title = styled.h1`
   color: #af0069;
 `;
 
-export const Frm = styled(Form)`
+export const Frm = styled.form`
   display: grid;
   grid-gap: 1.8rem;
   background-color: white;
 `;
 
-export const Inpt = styled(Input)`
+export const Inpt = styled.input`
   width: 100%;
   height: 43px;
   border-radius: 8px;
