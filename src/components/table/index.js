@@ -30,7 +30,6 @@ const Td = styled.td`
 const Icon1 = styled(EditAlt)`
   width: 23px;
   padding-left: 12px;
-
   :hover {
     cursor: pointer;
   }
@@ -39,7 +38,6 @@ const Icon1 = styled(EditAlt)`
 const Icon2 = styled(DeleteForever)`
   width: 23px;
   padding-left: 12px;
-
   :hover {
     cursor: pointer;
   }

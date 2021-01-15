@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Input from "../../components/input/index";
-import { Form } from "@unform/web";
 
 export const WrapperTitle = styled.div`
   height: 100px;
@@ -29,11 +27,11 @@ export const Title2 = styled.h3`
   font-family: "Open Sans", sans-serif;
 `;
 
-export const Frm = styled(Form)`
+export const Frm = styled.form`
   width: 400px;
 `;
 
-export const Inpt = styled(Input)`
+export const Inpt = styled.input`
   width: 100%;
   height: 43px;
   border-radius: 8px;

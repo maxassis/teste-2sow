@@ -3,6 +3,7 @@ import * as S from "./styles";
 import Header from "../../components/header/index";
 
 import Table from "../../components/table/index";
+import Fetch from "../../components/fetchData";
 
 function List({ data }) {
   console.log(data);
@@ -20,7 +21,7 @@ function List({ data }) {
           {/* <button>Enviar</button> */}
         </S.Frm>
       </S.WrapperInput>
-      <Table />
+      <Fetch />
     </>
   );
 }
