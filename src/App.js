@@ -1,12 +1,10 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-//import Login from "./pages/login";
 import GlobalStyles from "./styles/global";
-import Fetch from "./components/fetchData/index";
-//import Header from "./components/header/index";
-import List from "./pages/List/index";
-import Table from "./components/table/index";
-import Register from "./pages/Register/index";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Login from "./pages/login";
+import List from "./pages/List";
+import Register from "./pages/Register";
 
 function App() {
   const queryClient = new QueryClient();
@@ -16,7 +14,22 @@ function App() {
       <GlobalStyles />
 
       <QueryClientProvider client={queryClient}>
-        <List />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact={true}>
+              <Login />
+            </Route>
+
+            <Route path="/listagem" exact={true}>
+              <List />
+            </Route>
+
+            <Route path="/register" exact={true}>
+              <Register />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
     </>
