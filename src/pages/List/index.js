@@ -8,7 +8,12 @@ function List({ data }) {
 
   return (
     <>
-      <Header menu1={"Busca"} menu2={"Cadastro"} menu3={"Logout"} />
+      <Header
+        menu1={"Busca"}
+        menu2={"Cadastro"}
+        url2={"/register"}
+        menu3={"Logout"}
+      />
       <S.WrapperTitle>
         <S.Title>Lista de Usuarios</S.Title>
       </S.WrapperTitle>

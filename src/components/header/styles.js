@@ -50,4 +50,5 @@ export const Button = styled.button`
   font-size: 22px;
   font-family: "Open Sans", sans-serif;
   line-height: 1;
+  cursor: pointer;
 `;

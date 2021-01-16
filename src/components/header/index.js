@@ -14,7 +14,9 @@ function Header(props) {
     <>
       <S.Wrapper>
         <S.Nav>
-          <S.Logo>2Swon List</S.Logo>
+          <S.Linki to="/">
+            <S.Logo>2Swon List</S.Logo>
+          </S.Linki>
           <S.Ul>
             <S.Li>
               <S.Linki to={props.url1}>
@@ -22,7 +24,7 @@ function Header(props) {
               </S.Linki>
             </S.Li>
             <S.Li>
-              <S.Linki>
+              <S.Linki to={props.url2}>
                 <S.Button>{props.menu2}</S.Button>
               </S.Linki>
             </S.Li>

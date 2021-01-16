@@ -12,11 +12,12 @@ export const Th = styled.th`
   background-color: #af0069;
   color: white;
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 600;
   padding-bottom: 15px;
   padding-top: 15px;
   padding-left: 10px;
   text-align: left;
+  font-family: "Open Sans", sans-serif;
 `;
 
 export const Td = styled.td`
@@ -24,6 +25,7 @@ export const Td = styled.td`
   border-bottom: 0.5px dotted;
   padding-top: 19px;
   padding-left: 10px;
+  font-family: "Open Sans", sans-serif;
 `;
 
 export const Icon1 = styled(EditAlt)`
