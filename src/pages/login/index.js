@@ -5,12 +5,15 @@ import Header from "../../components/header";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
-function receiveToken() {
-  localStorage.setItem("token", uuidv4());
-}
+import { useHistory } from "react-router-dom";
 
 function Login() {
+  const history = useHistory();
+  function receiveToken() {
+    localStorage.setItem("token", uuidv4());
+    history.push("/listagem");
+  }
+
   const schema = yup.object().shape({
     email: yup.string().email().required("Email obrigatorio"),
     password: yup

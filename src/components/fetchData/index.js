@@ -1,7 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
-//import List from "../../pages/List";
 import Table from "../table/index";
 
 export default function Fetch() {

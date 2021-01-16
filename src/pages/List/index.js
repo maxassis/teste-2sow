@@ -1,8 +1,6 @@
 import React from "react";
 import * as S from "./styles";
 import Header from "../../components/header/index";
-
-import Table from "../../components/table/index";
 import Fetch from "../../components/fetchData";
 
 function List({ data }) {
@@ -10,7 +8,7 @@ function List({ data }) {
 
   return (
     <>
-      <Header />
+      <Header menu1={"Busca"} menu2={"Cadastro"} menu3={"Logout"} />
       <S.WrapperTitle>
         <S.Title>Lista de Usuarios</S.Title>
       </S.WrapperTitle>

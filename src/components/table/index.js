@@ -1,63 +1,32 @@
 import React from "react";
-import { EditAlt } from "@styled-icons/boxicons-regular/EditAlt";
-import { DeleteForever } from "@styled-icons/material/DeleteForever";
-import styled from "styled-components";
-
-const Tabela = styled.table`
-  width: 96%;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-const Th = styled.th`
-  background-color: #af0069;
-  color: white;
-  font-size: 19px;
-  font-weight: 700;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  padding-left: 10px;
-  text-align: left;
-`;
-
-const Td = styled.td`
-  height: 35px;
-  border-bottom: 0.5px dotted;
-  padding-top: 19px;
-  padding-left: 10px;
-`;
-
-const Icon1 = styled(EditAlt)`
-  width: 23px;
-  padding-left: 12px;
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const Icon2 = styled(DeleteForever)`
-  width: 23px;
-  padding-left: 12px;
-  :hover {
-    cursor: pointer;
-  }
-`;
+import * as S from "./styles";
+import axios from "axios";
+import { useMutation, useQueryClient } from "react-query";
 
 function Table({ data }) {
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (userID) => axios.delete(`http://localhost:5000/usuarios/${userID}`),
+    {
+      onSuccess: () => queryClient.invalidateQueries("queryDb"),
+    }
+  );
+
   const names = data.map(function (user) {
     return (
       <>
         <tr>
-          <Td>{user.nome}</Td>
-          <Td>{user.cpf}</Td>
-          <Td>{user.email}</Td>
-          <Td>{user.endereco.cidade}</Td>
-          <Td>
-            <Icon1 />
-          </Td>
-          <Td>
-            <Icon2 />
-          </Td>
+          <S.Td>{user.nome}</S.Td>
+          <S.Td>{user.cpf}</S.Td>
+          <S.Td>{user.email}</S.Td>
+          <S.Td>{user.endereco.cidade}</S.Td>
+          <S.Td>
+            <S.Icon1 onClick={() => mutation.mutate(user.id)} />
+          </S.Td>
+          <S.Td>
+            <S.Icon2 onClick={() => alert(user.id)} />
+          </S.Td>
         </tr>
       </>
     );
@@ -65,17 +34,17 @@ function Table({ data }) {
 
   return (
     <>
-      <Tabela>
+      <S.Tabela>
         <tr>
-          <Th>Nome</Th>
-          <Th>Cpf</Th>
-          <Th>Email</Th>
-          <Th>Cidade</Th>
-          <Th>Editar</Th>
-          <Th>Apagar</Th>
+          <S.Th>Nome</S.Th>
+          <S.Th>Cpf</S.Th>
+          <S.Th>Email</S.Th>
+          <S.Th>Cidade</S.Th>
+          <S.Th>Editar</S.Th>
+          <S.Th>Apagar</S.Th>
         </tr>
         {names}
-      </Tabela>
+      </S.Tabela>
     </>
   );
 }
