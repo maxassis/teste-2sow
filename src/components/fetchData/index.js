@@ -15,7 +15,7 @@ export default function Fetch() {
 
   return (
     <>
-      {error && <h1>Deu ruuim</h1>}
+      {error && <h1>Erro na requisição</h1>}
       {isLoading ? <h1>Carregando</h1> : <Table data={data} />}
     </>
   );
