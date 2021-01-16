@@ -16,7 +16,6 @@ function List({ data }) {
         <S.Title2>Busque um usuario pelo nome</S.Title2>
         <S.Frm>
           <S.Inpt name="name" placeholder="digite um nome" />
-          {/* <button>Enviar</button> */}
         </S.Frm>
       </S.WrapperInput>
       <Fetch />

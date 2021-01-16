@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -36,4 +37,17 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   font-size: 22px;
   font-family: "Open Sans", sans-serif;
+`;
+
+export const Linki = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
 `;

@@ -41,3 +41,17 @@ export const Icon2 = styled(DeleteForever)`
     cursor: pointer;
   }
 `;
+
+export const Loading = styled.div`
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Img = styled.img`
+  width: 45px;
+  text-align: center;
+  background-color: transparent;
+`;

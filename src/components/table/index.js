@@ -2,6 +2,7 @@ import React from "react";
 import * as S from "./styles";
 import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
+import Loading from "../../assets/load.gif";
 
 function Table({ data }) {
   const queryClient = useQueryClient();
@@ -22,10 +23,10 @@ function Table({ data }) {
           <S.Td>{user.email}</S.Td>
           <S.Td>{user.endereco.cidade}</S.Td>
           <S.Td>
-            <S.Icon1 onClick={() => mutation.mutate(user.id)} />
+            <S.Icon1 />
           </S.Td>
           <S.Td>
-            <S.Icon2 onClick={() => alert(user.id)} />
+            <S.Icon2 onClick={() => mutation.mutate(user.id)} />
           </S.Td>
         </tr>
       </>
@@ -35,6 +36,12 @@ function Table({ data }) {
   return (
     <>
       <S.Tabela>
+        {mutation.isLoading ? (
+          <S.Loading>
+            <S.Img src={Loading} alt="loading..." />
+          </S.Loading>
+        ) : null}
+
         <tr>
           <S.Th>Nome</S.Th>
           <S.Th>Cpf</S.Th>
