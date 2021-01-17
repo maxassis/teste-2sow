@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+//import { ReactQueryDevtools } from "react-query/devtools";
 import axios from "axios";
 import GlobalStyles from "./styles/global";
 import Routes from "./routes";
@@ -26,7 +26,7 @@ function App() {
 
       <QueryClientProvider client={queryClient}>
         <Routes />
-        <ReactQueryDevtools initialIsOpen={true} />
+        {/*  <ReactQueryDevtools initialIsOpen={false} /> */}
       </QueryClientProvider>
     </>
   );

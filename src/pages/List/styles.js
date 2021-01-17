@@ -4,7 +4,6 @@ import FetchName from "../../components/fetchName/index";
 export const WrapperTitle = styled.div`
   height: 100px;
   display: flex;
-
   justify-content: center;
   align-items: center;
 `;
