@@ -4,23 +4,40 @@ import Header from "../../components/header/index";
 import Fetch from "../../components/fetchData";
 import { useForm } from "react-hook-form";
 import FetchName from "../../components/fetchName";
+import { useQuery } from "react-query";
+import axios from "axios";
+import Loading from "../../assets/load.gif";
 
 function List() {
   const { register, handleSubmit } = useForm();
+  const [toggleFetch, setToggleFetch] = useState(false);
+  const [name, setName] = useState("nildis");
   const [show, setShow] = useState(false);
-  const [name, setName] = useState("");
+
+  const { data, error, isLoading, refetch } = useQuery();
+  console.log(data);
 
   function onSubmit(data) {
-    console.log(data);
     if (data.busca.trim() !== "") {
-      const status = !show;
-      setShow(status);
       setName(data.busca);
+      // setToggleFetch(true);
+      // setToggleFetch(false);
+      //  setShow(true);
+      refetch();
     }
   }
 
+  const filtrado = data?.filter((user) => {
+    if (user.nome === "chiquinho") {
+    }
+    return user;
+  });
+
+  console.log(filtrado);
+
   return (
     <>
+      {error ? <span>deu erro</span> : null}
       <Header
         menu1={"Busca"}
         menu2={"Cadastro"}
@@ -36,7 +53,7 @@ function List() {
           <S.Inpt name="busca" placeholder="digite um nome" ref={register()} />
         </S.Frm>
       </S.WrapperInput>
-      {show && <FetchName nameUser={name} />}
+      {isLoading ? null : <FetchName data={filtrado} />}
       <Fetch />
     </>
   );

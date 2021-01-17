@@ -1,21 +1,8 @@
 {
   "usuarios": [
     {
-      "id": 4,
-      "nome": "chiquinho",
-      "cpf": "213.333.143-45",
-      "email": "ricardo@email.com",
-      "endereco": {
-        "cep": 13454888,
-        "rua": "rua comandante ituriel",
-        "numero": 666,
-        "bairro": "barra da tijuca",
-        "cidade": "Cabo frio"
-      }
-    },
-    {
-      "id": 6,
-      "nome": "nildis",
+      "id": 20,
+      "nome": "toninho",
       "cpf": "213.333.143-45",
       "email": "ricardo@email.com",
       "endereco": {
