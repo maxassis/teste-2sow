@@ -61,3 +61,23 @@ export const Img = styled.img`
   text-align: center;
   background-color: transparent;
 `;
+
+export const DivButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+`;
+
+export const Button = styled.button`
+  width: 13%;
+  height: 43px;
+  border-radius: 10px;
+  outline: none;
+  background-color: black;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+`;

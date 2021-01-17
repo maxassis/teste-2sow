@@ -1,8 +1,10 @@
 import React from "react";
 import * as S from "./styles";
+import { useStore } from "../../store";
 
 export default function FetchName(props) {
   console.log(props.data);
+  const { show, truer, falser } = useStore();
 
   return (
     <>
@@ -35,6 +37,9 @@ export default function FetchName(props) {
             );
           })}
         </S.Tabela>
+        <S.DivButton>
+          <S.Button onClick={falser}>Fechar Busca</S.Button>
+        </S.DivButton>
       </S.WrapperTable>
     </>
   );

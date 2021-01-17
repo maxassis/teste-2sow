@@ -4,33 +4,34 @@ import Header from "../../components/header/index";
 import Fetch from "../../components/fetchData";
 import { useForm } from "react-hook-form";
 import FetchName from "../../components/fetchName";
-import { useQuery } from "react-query";
-import axios from "axios";
+import { useQuery, useQueryClient } from "react-query";
+import { useStore } from "../../store";
 import Loading from "../../assets/load.gif";
 
 function List() {
   const { register, handleSubmit } = useForm();
-  const [toggleFetch, setToggleFetch] = useState(false);
-  const [name, setName] = useState("nildis");
-  const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  // const [show, setShow] = useState(false);
+  const queryClient = useQueryClient();
+  const { show, truer, falser } = useStore();
 
-  const { data, error, isLoading, refetch } = useQuery();
+  const { data, error } = useQuery();
   console.log(data);
+  console.log(show);
 
   function onSubmit(data) {
     if (data.busca.trim() !== "") {
       setName(data.busca);
-      // setToggleFetch(true);
-      // setToggleFetch(false);
-      //  setShow(true);
-      refetch();
+      truer();
+      queryClient.invalidateQueries();
     }
   }
 
   const filtrado = data?.filter((user) => {
-    if (user.nome === "chiquinho") {
+    if (user.nome === name) {
+      return user;
     }
-    return user;
+    // return null;
   });
 
   console.log(filtrado);
@@ -53,7 +54,7 @@ function List() {
           <S.Inpt name="busca" placeholder="digite um nome" ref={register()} />
         </S.Frm>
       </S.WrapperInput>
-      {isLoading ? null : <FetchName data={filtrado} />}
+      {show && <FetchName data={filtrado} />}
       <Fetch />
     </>
   );
