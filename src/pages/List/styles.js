@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FetchName from "../../components/fetchName/index";
 
 export const WrapperTitle = styled.div`
   height: 100px;
@@ -41,4 +42,8 @@ export const Inpt = styled.input`
   padding-left: 10px;
   box-sizing: border-box;
   margin-top: 13px;
+`;
+
+export const Search = styled(FetchName)`
+  margin-bottom: 50px;
 `;

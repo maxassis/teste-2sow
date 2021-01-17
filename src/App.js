@@ -6,7 +6,9 @@ import Routes from "./routes";
 
 function App() {
   const defaultQueryFn = async ({ queryKey }) => {
-    const { data } = await axios.get(`http://localhost:5000/usuarios`);
+    const { data } = await axios.get(
+      `http://localhost:5000/usuarios${queryKey}`
+    );
     return data;
   };
 

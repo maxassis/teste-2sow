@@ -8,12 +8,14 @@ import FetchName from "../../components/fetchName";
 function List() {
   const { register, handleSubmit } = useForm();
   const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
 
   function onSubmit(data) {
     console.log(data);
     if (data.busca.trim() !== "") {
       const status = !show;
       setShow(status);
+      setName(data.busca);
     }
   }
 
@@ -34,8 +36,8 @@ function List() {
           <S.Inpt name="busca" placeholder="digite um nome" ref={register()} />
         </S.Frm>
       </S.WrapperInput>
-      {show && <Fetch />}
-      {/*!show && <FetchName /> */}
+      {show && <FetchName nameUser={name} />}
+      <Fetch />
     </>
   );
 }

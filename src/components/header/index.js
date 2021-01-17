@@ -19,11 +19,6 @@ function Header(props) {
           </S.Linki>
           <S.Ul>
             <S.Li>
-              <S.Linki to={props.url1}>
-                <S.Button>{props.menu1}</S.Button>
-              </S.Linki>
-            </S.Li>
-            <S.Li>
               <S.Linki to={props.url2}>
                 <S.Button>{props.menu2}</S.Button>
               </S.Linki>

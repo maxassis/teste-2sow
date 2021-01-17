@@ -76,9 +76,9 @@ export default function Register() {
   return (
     <>
       <Header
-        menu1={"Lista"}
-        url1={"/listagem"}
-        menu2={"Busca"}
+        menu1={"Busca"}
+        url2={"/listagem"}
+        menu2={"Lista"}
         menu3={"Logout"}
       />
       <S.WrapperTitle>
