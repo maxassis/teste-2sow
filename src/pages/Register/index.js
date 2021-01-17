@@ -43,12 +43,13 @@ export default function Register() {
           const rua = (document.getElementById("rua").value =
             response.data.logradouro);
           rua !== undefined && executePost();
+          alert("usuario cadastrado com sucesso");
         } else if (response.data.erro === true) {
-          alert("deu ruim");
+          alert("cep invalido");
         }
       })
       .catch((error) => {
-        alert("deu erro");
+        alert("cep invalido");
         console.log(error.response);
       });
 

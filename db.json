@@ -1,19 +1,6 @@
 {
   "usuarios": [
     {
-      "id": 4,
-      "nome": "nildis",
-      "cpf": "213.333.143-45",
-      "email": "ricardo@email.com",
-      "endereco": {
-        "cep": 13454888,
-        "rua": "rua comandante ituriel",
-        "numero": 666,
-        "bairro": "barra da tijuca",
-        "cidade": "Cabo frio"
-      }
-    },
-    {
       "id": 5,
       "nome": "chiquinho",
       "cpf": "213.333.143-45",
@@ -35,6 +22,97 @@
         "cep": "01001-000",
         "rua": "Praça da Sé",
         "numero": "212121",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "b36493dd-53e5-4ffc-9ad9-3d818d5bbaf0",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "1e6bad90-4deb-4ad4-ae43-13ca10dd74c1",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "7cb42e36-84b0-4f4e-a589-a3840c087cd0",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "988d56eb-75c8-4e5d-bb68-e12d4a417dec",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "2247fe8c-414e-4e82-aafc-554b113580d9",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "9d675f1a-8762-4f70-98ff-04fbc09f1a06",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
+      }
+    },
+    {
+      "id": "deac0d12-3a01-43ed-9c79-e8e21726b56f",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
+      "endereco": {
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "3343220",
         "bairro": "Sé",
         "cidade": "São Paulo"
       }
