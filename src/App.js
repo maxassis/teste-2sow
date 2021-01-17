@@ -1,15 +1,22 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-
+import axios from "axios";
 import GlobalStyles from "./styles/global";
-//import { Switch, Route, BrowserRouter } from "react-router-dom";
-//import Login from "./pages/login";
-//import List from "./pages/List";
-//import Register from "./pages/Register";
 import Routes from "./routes";
 
 function App() {
-  const queryClient = new QueryClient();
+  const defaultQueryFn = async ({ queryKey }) => {
+    const { data } = await axios.get(`http://localhost:5000/usuarios`);
+    return data;
+  };
+
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        queryFn: defaultQueryFn,
+      },
+    },
+  });
 
   return (
     <>

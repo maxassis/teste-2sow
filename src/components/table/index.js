@@ -10,7 +10,7 @@ function Table({ data }) {
   const mutation = useMutation(
     (userID) => axios.delete(`http://localhost:5000/usuarios/${userID}`),
     {
-      onSuccess: () => queryClient.invalidateQueries("queryDb"),
+      onSuccess: () => queryClient.invalidateQueries(),
     }
   );
 

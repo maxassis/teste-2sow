@@ -17,12 +17,7 @@ const H1 = styled.h1`
 `;
 
 export default function Fetch() {
-  const dbFetch = async () => {
-    const { data } = await axios.get("http://localhost:5000/usuarios");
-    return data;
-  };
-
-  const { data, error, isLoading } = useQuery("queryDb", dbFetch);
+  const { data, error, isLoading } = useQuery();
   console.log(data);
 
   return (

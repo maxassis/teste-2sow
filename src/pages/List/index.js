@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import Header from "../../components/header/index";
 import Fetch from "../../components/fetchData";
+import { useForm } from "react-hook-form";
+import FetchName from "../../components/fetchName";
 
-function List({ data }) {
-  console.log(data);
+function List() {
+  const { register, handleSubmit } = useForm();
+  const [show, setShow] = useState(false);
+
+  function onSubmit(data) {
+    console.log(data);
+    if (data.busca.trim() !== "") {
+      const status = !show;
+      setShow(status);
+    }
+  }
 
   return (
     <>
@@ -19,11 +30,12 @@ function List({ data }) {
       </S.WrapperTitle>
       <S.WrapperInput>
         <S.Title2>Busque um usuario pelo nome</S.Title2>
-        <S.Frm>
-          <S.Inpt name="name" placeholder="digite um nome" />
+        <S.Frm onSubmit={handleSubmit(onSubmit)}>
+          <S.Inpt name="busca" placeholder="digite um nome" ref={register()} />
         </S.Frm>
       </S.WrapperInput>
-      <Fetch />
+      {show && <Fetch />}
+      {/*!show && <FetchName /> */}
     </>
   );
 }
