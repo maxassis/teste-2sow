@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -75,77 +75,93 @@ export default function Register() {
 
   return (
     <>
-      <Header
-        menu1={"Busca"}
-        url2={"/listagem"}
-        menu2={"Lista"}
-        menu3={"Logout"}
-      />
-      <S.WrapperTitle>
-        <h1>Cadastro</h1>
-      </S.WrapperTitle>
-      <S.WrapperForm>
-        <S.Frm onSubmit={handleSubmit(onSubmit)}>
-          <S.Input name="nome" ref={register()} placeholder="Nome" />
-          {errors.nome && <S.Span>O nome e obrigatorio</S.Span>}
-          <Controller
-            as={S.InputMsk}
-            control={control}
-            mask="999.999.999-99"
-            name="cpf"
-            maskPlaceholder={null}
-            placeholder="Cpf"
-            defaultValue=""
-          />
-          {errors.cpf && <S.Span>O cpf e obrigatorio</S.Span>}
-          <S.Input name="email" ref={register()} placeholder="Email" />
-          {errors.email && <S.Span>Digite um email valido</S.Span>}
-          <div>
-            <Controller
-              as={S.InputMsk}
-              control={control}
-              mask="99999-999"
-              maskPlaceholder={null}
-              name="cep"
-              placeholder="Cep"
-              defaultValue=""
-            />
-            {errors.cep && <S.Span>O cep e obrigatorio</S.Span>}
-          </div>
-          <S.Input
-            name="numero"
-            type="number"
-            ref={register()}
-            placeholder="Numero"
-          />
-          {errors.numero && <S.Span>O numero e obrigatorio</S.Span>}
-          <S.Input
-            name="rua"
-            id="rua"
-            ref={register()}
-            placeholder="Rua"
-            readOnly="true"
-          />
-          {errors.rua && <S.Span>A rua e obrigatorio</S.Span>}
-          <S.Input
-            name="bairro"
-            id="bairro"
-            ref={register()}
-            placeholder="Bairro"
-            readOnly="true"
-          />
-          {errors.bairro && <S.Span>O bairro e obrigatorio</S.Span>}
-          <S.Input
-            name="cidade"
-            id="cidade"
-            ref={register()}
-            placeholder="Cidade"
-            readOnly="true"
-          />
-          {errors.cidade && <S.Span>A cidade e obrigatorio</S.Span>}
-          <S.Btn>Enviar</S.Btn>
-        </S.Frm>
-      </S.WrapperForm>
+      <S.DivGeral>
+        <Header
+          menu1={"Busca"}
+          url2={"/listagem"}
+          menu2={"Lista"}
+          menu3={"Logout"}
+        />
+        <S.WrapperTitle>
+          <S.H1>Cadastro</S.H1>
+        </S.WrapperTitle>
+        <S.WrapperForm>
+          <S.Frm onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <S.Input name="nome" ref={register()} placeholder="Nome" />
+              {errors.nome && <S.Span>O nome e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <Controller
+                as={S.InputMsk}
+                control={control}
+                mask="999.999.999-99"
+                name="cpf"
+                maskPlaceholder={null}
+                placeholder="Cpf"
+                defaultValue=""
+              />
+              {errors.cpf && <S.Span>O cpf e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <S.Input name="email" ref={register()} placeholder="Email" />
+              {errors.email && <S.Span>Digite um email valido</S.Span>}
+            </div>
+            <div>
+              <Controller
+                as={S.InputMsk}
+                control={control}
+                mask="99999-999"
+                maskPlaceholder={null}
+                name="cep"
+                placeholder="Cep"
+                defaultValue=""
+              />
+              {errors.cep && <S.Span>O cep e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <S.Input
+                name="numero"
+                type="number"
+                ref={register()}
+                placeholder="Numero"
+              />
+              {errors.numero && <S.Span>O numero e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <S.InputDisabled
+                name="rua"
+                id="rua"
+                ref={register()}
+                placeholder="Rua"
+                readOnly="true"
+              />
+              {errors.rua && <S.Span>A rua e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <S.InputDisabled
+                name="bairro"
+                id="bairro"
+                ref={register()}
+                placeholder="Bairro"
+                readOnly="true"
+              />
+              {errors.bairro && <S.Span>O bairro e obrigatorio</S.Span>}
+            </div>
+            <div>
+              <S.InputDisabled
+                name="cidade"
+                id="cidade"
+                ref={register()}
+                placeholder="Cidade"
+                readOnly="true"
+              />
+              {errors.cidade && <S.Span>A cidade e obrigatorio</S.Span>}
+            </div>
+            <S.Btn>Enviar</S.Btn>
+          </S.Frm>
+        </S.WrapperForm>
+      </S.DivGeral>
     </>
   );
 }

@@ -32,26 +32,28 @@ function Login() {
 
   return (
     <>
-      <Header />
-      <S.Wrapper>
-        <S.LoginBox>
-          <S.Title>Login</S.Title>
+      <S.DivGeral>
+        <Header />
+        <S.Wrapper>
+          <S.LoginBox>
+            <S.Title>Login</S.Title>
 
-          <S.Frm onSubmit={handleSubmit(onSubmit)}>
-            <S.Inpt name="email" placeholder="Email" ref={register()} />
-            {errors.email?.message}
-            <S.Inpt
-              name="password"
-              type="password"
-              placeholder="Senha"
-              ref={register()}
-            />
-            {errors.password?.message}
+            <S.Frm onSubmit={handleSubmit(onSubmit)}>
+              <S.Inpt name="email" placeholder="Email" ref={register()} />
+              {errors.email?.message}
+              <S.Inpt
+                name="password"
+                type="password"
+                placeholder="Senha"
+                ref={register()}
+              />
+              {errors.password?.message}
 
-            <S.Btn onClick={receiveToken}>Entrar</S.Btn>
-          </S.Frm>
-        </S.LoginBox>
-      </S.Wrapper>
+              <S.Btn onClick={receiveToken}>Entrar</S.Btn>
+            </S.Frm>
+          </S.LoginBox>
+        </S.Wrapper>
+      </S.DivGeral>
     </>
   );
 }

@@ -6,14 +6,12 @@ import { useForm } from "react-hook-form";
 import FetchName from "../../components/fetchName";
 import { useQuery, useQueryClient } from "react-query";
 import { useStore } from "../../store";
-import Loading from "../../assets/load.gif";
 
 function List() {
   const { register, handleSubmit } = useForm();
   const [name, setName] = useState("");
-  // const [show, setShow] = useState(false);
   const queryClient = useQueryClient();
-  const { show, truer, falser } = useStore();
+  const { show, truer } = useStore();
 
   const { data, error } = useQuery();
   console.log(data);
@@ -31,7 +29,7 @@ function List() {
     if (user.nome === name) {
       return user;
     }
-    // return null;
+    return null;
   });
 
   console.log(filtrado);

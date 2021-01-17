@@ -1,14 +1,29 @@
 import styled from "styled-components";
+import media from "styled-media-query";
+
+export const DivGeral = styled.div`
+  overflow-x: hidden;
+  box-sizing: border-box;
+`;
 
 export const Wrapper = styled.div`
   display: grid;
+  height: 100vh;
+  width: 100%;
   grid-template-columns: 515px;
   justify-content: center;
   align-content: center;
-  width: 100%;
-  height: 85vh;
+
   background-color: #f5f4f4;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+    justify-self: center;
+    grid-template-columns: 90%;
+    overflow: hidden;
+    
+  `}
 `;
 
 export const LoginBox = styled.div`
@@ -22,6 +37,12 @@ export const LoginBox = styled.div`
   justify-content: center;
   box-shadow: 0px 3px 16px #00000029;
   background-color: white;
+
+  ${media.lessThan("medium")`
+      width: 80%;
+      justify-self: center;
+    
+  `}
 `;
 
 export const Title = styled.h1`
@@ -34,6 +55,7 @@ export const Title = styled.h1`
 
 export const Frm = styled.form`
   display: grid;
+
   grid-gap: 1.8rem;
   background-color: white;
 `;

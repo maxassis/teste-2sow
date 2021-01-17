@@ -1,15 +1,33 @@
 import React from "react";
 import * as S from "./styles";
 import { useStore } from "../../store";
+import { useMutation, useQueryClient } from "react-query";
+import axios from "axios";
+import Loading from "../../assets/load.gif";
 
 export default function FetchName(props) {
   console.log(props.data);
-  const { show, truer, falser } = useStore();
+  const { falser } = useStore();
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation(
+    (userID) => axios.delete(`http://localhost:5000/usuarios/${userID}`),
+    {
+      onSuccess: () => queryClient.invalidateQueries(),
+    }
+  );
 
   return (
     <>
       <S.WrapperTable>
         <S.Tabela>
+          {mutation.isLoading ? (
+            <S.Loading>
+              <S.Img src={Loading} alt="loading..." />
+            </S.Loading>
+          ) : null}
+
           <tr>
             <S.Th>Nome</S.Th>
             <S.Th>Cpf</S.Th>
@@ -30,7 +48,7 @@ export default function FetchName(props) {
                     <S.Icon1 />
                   </S.Td>
                   <S.Td>
-                    <S.Icon2 />
+                    <S.Icon2 onClick={() => mutation.mutate(user.id)} />
                   </S.Td>
                 </tr>
               </>

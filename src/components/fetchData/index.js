@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery } from "react-query";
-import axios from "axios";
 import Table from "../table/index";
 import styled from "styled-components";
 

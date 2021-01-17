@@ -1,8 +1,8 @@
 {
   "usuarios": [
     {
-      "id": 20,
-      "nome": "toninho",
+      "id": 4,
+      "nome": "nildis",
       "cpf": "213.333.143-45",
       "email": "ricardo@email.com",
       "endereco": {
@@ -15,7 +15,7 @@
     },
     {
       "id": 5,
-      "nome": "lina",
+      "nome": "chiquinho",
       "cpf": "213.333.143-45",
       "email": "ricardo@email.com",
       "endereco": {
@@ -27,16 +27,16 @@
       }
     },
     {
-      "id": 4,
-      "nome": "nildis",
-      "cpf": "213.333.143-45",
-      "email": "ricardo@email.com",
+      "id": "f97621f6-97f7-4004-bdac-899308fdb821",
+      "nome": "ewqe",
+      "cpf": "222.222.222-22",
+      "email": "max.assis@ymail.com",
       "endereco": {
-        "cep": 13454888,
-        "rua": "rua comandante ituriel",
-        "numero": 666,
-        "bairro": "barra da tijuca",
-        "cidade": "Cabo frio"
+        "cep": "01001-000",
+        "rua": "Praça da Sé",
+        "numero": "212121",
+        "bairro": "Sé",
+        "cidade": "São Paulo"
       }
     }
   ]

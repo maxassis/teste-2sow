@@ -1,7 +1,7 @@
 import create from "zustand";
 
 export const useStore = create((set) => ({
-  show: true,
+  show: false,
 
   truer: () =>
     set((state) => ({
