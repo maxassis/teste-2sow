@@ -2,6 +2,8 @@
 
 Desafio para vaga de Front-End na 2Sow, consiste em implementar um sistema de cadastro de usuarios, com login, tabela de usuarios e cadastro com consulta a api de Cep da ViaCep (https://viacep.com.br/)
 
+**a funcionalidade de editar usuario esta pendente**
+
 ## Tecnologias principais
 
 <li>HTML, CSS, JavaScript e ReactJS</li>
@@ -9,11 +11,17 @@ Desafio para vaga de Front-End na 2Sow, consiste em implementar um sistema de ca
 ## Bibliotecas
 
 React Hook Forms
+
 React Query
+
 Styled Components
+
 Styled Media Query
+
 Axios
+
 Zustand
+
 React Input Mask
 
 ## Instruções
