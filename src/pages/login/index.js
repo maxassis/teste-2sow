@@ -9,13 +9,12 @@ import { useHistory } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
-  function receiveToken() {
-    localStorage.setItem("token", uuidv4());
-    history.push("/listagem");
-  }
 
   const schema = yup.object().shape({
-    email: yup.string().email().required("Email obrigatorio"),
+    email: yup
+      .string()
+      .email("digite um email valido")
+      .required("Email obrigatorio"),
     password: yup
       .string()
       .required("senha obrigatoria")
@@ -27,7 +26,10 @@ function Login() {
   });
 
   function onSubmit(data) {
-    console.log(data);
+    if (data !== undefined) {
+      localStorage.setItem("token", uuidv4());
+      history.push("/listagem");
+    }
   }
 
   return (
@@ -49,7 +51,7 @@ function Login() {
               />
               {errors.password?.message}
 
-              <S.Btn onClick={receiveToken}>Entrar</S.Btn>
+              <S.Btn>Entrar</S.Btn>
             </S.Frm>
           </S.LoginBox>
         </S.Wrapper>

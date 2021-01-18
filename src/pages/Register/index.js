@@ -27,13 +27,11 @@ export default function Register() {
   });
 
   function onSubmit(data) {
-    console.log(data);
     const cep = data.cep.replace(/-/g, "").replace(/\./g, "");
 
     axios
       .get(`https://viacep.com.br/ws/${cep}/json/`)
       .then((response) => {
-        console.log(response.request.status);
         if (
           response.request.status === 200 &&
           response.data.erro === undefined
@@ -69,8 +67,6 @@ export default function Register() {
       };
 
       const response = await axios.post("http://localhost:5000/usuarios", body);
-
-      console.log(response);
     };
   }
 

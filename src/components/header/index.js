@@ -24,7 +24,7 @@ function Header(props) {
               </S.Linki>
             </S.Li>
             <S.Li>
-              <S.Linki>
+              <S.Linki to={"#"}>
                 <S.Button onClick={logOut}>{props.menu3}</S.Button>
               </S.Linki>
             </S.Li>

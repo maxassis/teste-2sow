@@ -4,9 +4,9 @@ import { useStore } from "../../store";
 import { useMutation, useQueryClient } from "react-query";
 import axios from "axios";
 import Loading from "../../assets/load.gif";
+import { v4 as uuidv4 } from "uuid";
 
 export default function FetchName(props) {
-  console.log(props.data);
   const { falser } = useStore();
 
   const queryClient = useQueryClient();
@@ -36,14 +36,14 @@ export default function FetchName(props) {
             <S.Th>Editar</S.Th>
             <S.Th>Apagar</S.Th>
           </tr>
-          {props.data?.map(function (user) {
+          {props.data?.map(function (user, i) {
             return (
               <>
                 <tr>
-                  <S.Td>{user.nome}</S.Td>
-                  <S.Td>{user.cpf}</S.Td>
-                  <S.Td>{user.email}</S.Td>
-                  <S.Td>{user.endereco.cidade}</S.Td>
+                  <S.Td key={uuidv4()}>{user.nome}</S.Td>
+                  <S.Td key={uuidv4()}>{user.cpf}</S.Td>
+                  <S.Td key={uuidv4()}>{user.email}</S.Td>
+                  <S.Td key={uuidv4()}>{user.endereco.cidade}</S.Td>
                   <S.Td>
                     <S.Icon1 />
                   </S.Td>

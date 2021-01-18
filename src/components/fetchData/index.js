@@ -17,7 +17,6 @@ const H1 = styled.h1`
 
 export default function Fetch() {
   const { data, error, isLoading } = useQuery();
-  console.log(data);
 
   return (
     <>

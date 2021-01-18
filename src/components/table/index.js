@@ -3,6 +3,7 @@ import * as S from "./styles";
 import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
 import Loading from "../../assets/load.gif";
+import { v4 as uuidv4 } from "uuid";
 
 function Table({ data }) {
   const queryClient = useQueryClient();
@@ -14,14 +15,14 @@ function Table({ data }) {
     }
   );
 
-  const names = data.map(function (user) {
+  const names = data.map(function (user, i) {
     return (
       <>
         <tr>
-          <S.Td>{user.nome}</S.Td>
-          <S.Td>{user.cpf}</S.Td>
-          <S.Td>{user.email}</S.Td>
-          <S.Td>{user.endereco.cidade}</S.Td>
+          <S.Td key={uuidv4()}>{user.nome}</S.Td>
+          <S.Td key={uuidv4()}>{user.cpf}</S.Td>
+          <S.Td key={uuidv4()}>{user.email}</S.Td>
+          <S.Td key={uuidv4()}>{user.endereco.cidade}</S.Td>
           <S.Td>
             <S.Icon1 />
           </S.Td>

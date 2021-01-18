@@ -19,8 +19,6 @@ function List() {
   const { show, truer } = useStore();
 
   const { data, error } = useQuery();
-  console.log(data);
-  console.log(show);
 
   function onSubmit(data) {
     if (data.busca.trim() !== "") {
@@ -36,8 +34,6 @@ function List() {
     }
     return null;
   });
-
-  console.log(filtrado);
 
   return (
     <>
