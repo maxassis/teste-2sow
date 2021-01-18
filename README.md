@@ -1,6 +1,6 @@
 # Teste Front-end 2SOW
 
-Desafio para vaga de Front-End na 2Sow, consiste em implementar um sistema de cadastro de usuarios, com login, tabela de usuarios e cadastro com consulta a api de Cep da ViaCep (https://viacep.com.br/)
+Desafio para vaga de Front-End na 2Sow, consiste em implementar um sistema de cadastro de usuarios, com login, tabela de usuarios e cadastro com consulta a api de Cep da ViaCep (https://viacep.com.br/), a descrição detalhada de todos os requisitos do projeto se encontra no github da 2Sow no endereço (https://2sow.github.io/vaga-frontend/)
 
 **a funcionalidade de editar usuario esta pendente**
 
