@@ -28,7 +28,7 @@ React Input Mask
 
 Clone o projeto utilizando o comando:
 
-`https://github.com/maxassis/Telzir.git`
+`https://github.com/maxassis/teste-2sow.git`
 
 em seguida acesse a pasta do projeto e faça a instalação:
 
