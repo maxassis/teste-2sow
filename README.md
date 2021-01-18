@@ -42,6 +42,10 @@ dentro da pasta do projeto execute o comando para rodar a aplicação
 
 Sera preciso rodar um server Json 'fake' para consumir os dados da API localmente no endereço: `http://localhost:5000/usuarios`
 
+Para instalar o Json server : 
+
+`yarn global add json-server`
+
 Para rodar o Json Server execute o comando :
 
 `npm run server`
